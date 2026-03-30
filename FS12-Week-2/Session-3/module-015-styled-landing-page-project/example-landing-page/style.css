@@ -237,6 +237,12 @@ footer {
     padding: 0px;
     color: white;
     border: 2px solid #007BFF;
+    flex: wrap;
+}
+footer img {
+    width: 50px;
+    margin-top: 0px;
+    justify-content: right;
 }
 #submit {
     padding: 12px 24px;
