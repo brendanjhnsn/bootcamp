@@ -86,6 +86,7 @@ nav div{
 .cta-button:hover {
     background-color: #0056b3;
     color: white;
+    transition-duration: .5s;
 }
 #services {
     padding: 60px 20px;
