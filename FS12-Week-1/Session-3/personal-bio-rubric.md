@@ -28,4 +28,4 @@
 - [ ] Creative but professional content
 
 Due: By start of next project
-Submit: In the Project-Showcase channel in discord (either zip file or github link to repo)
+Submit: In the Project-Showcase channel in discord (either zip file or github link to repo - you can optionally add a screenshot)

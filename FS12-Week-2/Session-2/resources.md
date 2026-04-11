@@ -27,7 +27,7 @@
 - [Complex Selectors - Shay Howe](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)
 - [CSS Units - Codecademy](https://www.codecademy.com/resources/docs/css/units)
 - [Viewport Basics](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Viewport_meta_element#viewport_basics)
-
+- https://www.w3schools.com/html/html_responsive.asp
 ---
 
 ### **CheatSheets**
