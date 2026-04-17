@@ -1,4 +1,4 @@
-let temperature = 75;
+let temperature = 85;
 
 const isGreaterThanEighty = temperature > 80;
 
@@ -14,3 +14,4 @@ if (isGreaterThanEighty) {
 // comparisons, and often are used to set values
 
 let messageTwo = isGreaterThanEighty ? "Hot day!" : "Nice day!";
+console.log(messageTwo);
