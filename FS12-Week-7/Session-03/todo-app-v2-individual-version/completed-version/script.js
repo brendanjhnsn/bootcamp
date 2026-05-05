@@ -83,7 +83,13 @@ function hideErrorMessage() {
 // Todo Management Functions
 function addTodo(text) {
     const newTodo = {
+<<<<<<< HEAD
         id: Date.now().toString(),
+=======
+        // Make ID incrimental by one each time a new todo is added
+        id: (todos.length > 0) ? (parseInt(todos[todos.length - 1].id) + 1).toString() : '1',
+        // id: Date.now().toString(), // Unique ID based on timestamp
+>>>>>>> 92663b7d502a35694ca51982b0e657d78f03e072
         text: text,
         completed: false,
         createdAt: new Date().toISOString()
