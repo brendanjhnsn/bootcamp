@@ -1,9 +1,14 @@
 // endpoints on APIS
 
 // Go weather
-// gives us back a 404 - not found because api no longer works
-const url = "https://goweather.xyz/weather/Berlin";
 
+const url = "https://dogapi.dog/api/v1/facts?number=1";
+
+// common errors
+// go to a resource that doesn't exist
+
+// gives us back a 404 - not found
+const typoUrl = "https://dogapi.dog/api/v1/facts?number=1";
 
 fetch(url) // does a GET request
   // wait for the reponse to come back
@@ -20,10 +25,8 @@ fetch(url) // does a GET request
   .then((data) => {
     console.log("break");
 
-    console.log("response body now js object", data);
-
     const h1 = document.createElement("h1");
-    h1.textContent = data.description;
+    h1.textContent = data.facts[0];
     document.body.appendChild(h1);
 
     // how can you add the temperature to the

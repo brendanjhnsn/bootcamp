@@ -28,18 +28,6 @@ fetch(url) // by default this does a GET Method on the url
     const h1 = document.createElement("h1");
     h1.textContent = data.current_condition[0].weatherDesc[0].value;
     document.body.appendChild(h1);
-
-    const p = document.createElement("p");
-    p.textContent = `Temperature: ${data.current_condition[0].temp_C}°C`;
-    document.body.appendChild(p);
-
-    const p2 = document.createElement("p");
-    p2.textContent = `The wind speed is: ${data.current_condition[0].windspeedKmph} km/h`;
-    document.body.appendChild(p2);
-
-    const p3 = document.createElement("p");
-    p3.textContent = `The country is in: ${data.nearest_area[0].country[0].value}`;
-    document.body.appendChild(p3);
   });
 
 // It essentially works like this (Updated for wttr.in JSON structure)
