@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Search</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main class="page-container">
+      <section class="hero">
+        <h1>Stock Search</h1>
+        <p>
+          Search for stocks, add them to your watchlist, and expand them to view
+          charts and details.
+        </p>
+      </section>
+
+      <section class="search-card">
+        <h2>Search Stocks</h2>
+
+        <form class="stock-search-form">
+          <input
+            type="text"
+            placeholder="Search by symbol, example: AAPL"
+            aria-label="Search for stock">
+
+          <button type="submit">Search</button>
+        </form>
+
+        <div class="search-results">
+          <p class="placeholder-text">Search results will appear here.</p>
+        </div>
+      </section>
+
+      <section class="watchlist-card">
+        <div class="section-header">
+          <h2>Your Watchlist</h2>
+          <span>Selected Stocks</span>
+        </div>
+
+        <div class="stock-list">
+          <div class="stock-item expandable-stock">
+            <button class="stock-summary" type="button">
+              <span class="stock-info">
+                <span class="stock-symbol">AAPL</span>
+                <span class="company-name">Apple Inc.</span>
+              </span>
+              <span class="expand-icon">+</span>
+            </button>
+            <div class="stock-details">
+              <div class="chart-placeholder">
+                Stock graph from API will go here
+              </div>
+              <div class="stock-info-grid">
+                <div>
+                  <span>Price</span>
+                  <strong>$189.45</strong>
+                </div>
+                <div>
+                  <span>Change</span>
+                  <strong>+1.2%</strong>
+                </div>
+                <div>
+                  <span>Market Cap</span>
+                  <strong>$2.9T</strong>
+                </div>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+          <div class="stock-item expandable-stock">
+            <button class="stock-summary" type="button">
+              <span class="stock-info">
+                <span class="stock-symbol">MSFT</span>
+                <span class="company-name">Microsoft Corporation</span>
+              </span>
+              <span class="expand-icon">+</span>
+            </button>
+            <div class="stock-details">
+              <div class="chart-placeholder">
+                Stock graph from API will go here
+              </div>
+              <div class="stock-info-grid">
+                <div>
+                  <span>Price</span>
+                  <strong>$421.20</strong>
+                </div>
+                <div>
+                  <span>Change</span>
+                  <strong>-0.4%</strong>
+                </div>
+                <div>
+                  <span>Market Cap</span>
+                  <strong>$3.1T</strong>
+                </div>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+          <div class="stock-item expandable-stock">
+            <button class="stock-summary" type="button">
+              <span class="stock-info">
+                <span class="stock-symbol">NVDA</span>
+                <span class="company-name">NVIDIA Corporation</span>
+              </span>
+              <span class="expand-icon">+</span>
+            </button>
+            <div class="stock-details">
+              <div class="chart-placeholder">
+                Stock graph from API will go here
+              </div>
+              <div class="stock-info-grid">
+                <div>
+                  <span>Price</span>
+                  <strong>$950.02</strong>
+                </div>
+                <div>
+                  <span>Change</span>
+                  <strong>+3.5%</strong>
+                </div>
+                <div>
+                  <span>Market Cap</span>
+                  <strong>$2.3T</strong>
+                </div>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
