@@ -1,7 +1,6 @@
-// Add a form to add new todos with a delete button, and stores todos in local storage
 import React, { useState } from "react";
 
-const AddTodoForm = ({ addTodo, deleteTodo }) => {
+const AddTodoForm = ({ addTodo }) => {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {

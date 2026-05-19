@@ -1,39 +1,58 @@
-import { useState } from "react";
-import "./App.css";
-import TodoList from "./TodoList";
+import React, { useState, useEffect } from "react";
 import AddTodoForm from "./AddTodoForm";
-import DeleteButton from "./DeleteButton";
+import TodoCard from "./TodoCard";
 
+const App = () => {
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem("todos");
+    return saved ? JSON.parse(saved) : [];
+  });
 
-function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React" },
-    { id: 2, text: "Build a Todo App" },
-  ]);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text };
-    setTodos([...todos, newTodo]);
+    setTodos((prev) => [
+      ...prev,
+      {
+        completed: false,
+        id: Date.now(),
+        text,
+        notes: "",
+        priority: "Medium",
+        dueDate: "",
+      },
+    ]);
   };
-
-  const newTodo = localStorage.getItem("todos");
-  if (newTodo) {
-    setTodos(JSON.parse(newTodo));
-  };
-
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
+  // Merges only the changed fields into the matching todo
+  const updateTodo = (id, changes) => {
+    setTodos((prev) =>
+      prev.map((todo) => (todo.id === id ? { ...todo, ...changes } : todo)),
+    );
   };
 
   return (
-    <>
-      <h1>Todo List</h1>
-      <h3>Add a new todo:</h3>
+    <div>
+      <h1>My Todos</h1>
       <AddTodoForm addTodo={addTodo} />
-      <TodoList todos={todos} />
-    </>
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {todos.map((todo) => (
+          <TodoCard
+            key={todo.id}
+            todo={todo}
+            onDelete={deleteTodo}
+            onUpdate={updateTodo}
+          />
+        ))}
+      </ul>
+    </div>
   );
-}
+};
 
 export default App;

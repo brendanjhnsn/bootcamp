@@ -1,11 +1,7 @@
-// Add a delete button to remove todos
 import React from "react";
 
-
-const DeleteButton = ({ id, deleteTodo }) => {
-  return (
-    <button onClick={() => deleteTodo(id)}>Delete</button>
-  );
+const DeleteButton = ({ onClick }) => {
+  return <button onClick={onClick}>Delete</button>;
 };
 
 export default DeleteButton;
