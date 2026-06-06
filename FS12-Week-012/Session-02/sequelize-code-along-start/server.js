@@ -71,7 +71,7 @@ const getAllPlaylists = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
-
+app.get("/api/playlists", getAllPlaylists);
 
 // TODO: POST /api/playlists — create a playlist
 //   - Use Playlist.create(req.body)
@@ -151,6 +151,18 @@ const addSongToPlaylist = async (req, res) => {
 };
 
 app.post("/api/playlists/:id/songs", addSongToPlaylist);
+
+const getAllSongs = async (req, res) => {
+  try {
+    const songs = await Song.findAll();
+    res.json(songs);
+  } catch (error) {
+    console.error("Error fetching songs:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+app.get("/api/songs", getAllSongs);
 
 // ==================== START SERVER ====================
 

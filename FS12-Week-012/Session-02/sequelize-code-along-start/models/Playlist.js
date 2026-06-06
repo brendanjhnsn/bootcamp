@@ -17,5 +17,8 @@ const Playlist = sequelize.define("Playlist", {
   }
 });
 
+Playlist.belongsTo(require("./User"), { foreignKey: "userId" });
+Playlist.hasMany(require("./Song"), { foreignKey: "playlistId", onDelete: "CASCADE" });
+
 // TODO: Export the Playlist model
 module.exports = Playlist;

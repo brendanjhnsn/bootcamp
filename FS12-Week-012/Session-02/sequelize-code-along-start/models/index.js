@@ -22,4 +22,11 @@ const Song = require("./Song");
 //     }
 // )
 
+Playlist.belongsTo(User, { foreignKey: "userId" });
+User.hasMany(Playlist, { foreignKey: "userId", onDelete: "CASCADE" });
+Song.belongsTo(Playlist, { foreignKey: "playlistId" });
+Playlist.hasMany(Song, { foreignKey: "playlistId", onDelete: "CASCADE" });
+Song.belongsTo(User, { foreignKey: "userId" });
+User.hasMany(Song, { foreignKey: "userId", onDelete: "CASCADE" });
+
 module.exports = { sequelize, User, Playlist, Song };
